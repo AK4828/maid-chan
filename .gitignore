@@ -7,3 +7,7 @@
 /build
 /captures
 .externalNativeBuild
+libs/
+src/main/java/com/butuhpembantu/application/
+src/main/java/com/butuhpembantu/fragment/
+src/main/res/drawable/

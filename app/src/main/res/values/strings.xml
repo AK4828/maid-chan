@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">butuhpembantu</string>
+    <string name="app_name">Butuh Pembantu</string>
+    <string name="intro_title_slide1">Pilih Layanan Dari Kami</string>
+    <string name="intro_title_slide2">Tentukan Waktu Dan Lokasi</string>
+    <string name="intro_title_slide3">Terima Pelayanan</string>
+    <string name="intro_description1">Pilih beragam layanan yang kami sediakan disini.</string>
+    <string name="intro_description2">Tentukan waktu dan lokasi yang anda inginkan untuk menerima pelayanan dari kami.</string>
+    <string name="intro_description3">Para pekerja profesional kami akan datang dengan perlengkapan penuh sesuai kebutuhan ke tempat dan waktu yang anda pilih.</string>
+
 </resources>
