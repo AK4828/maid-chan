@@ -6,5 +6,7 @@
     <string name="intro_description1">Pilih beragam layanan yang kami sediakan disini.</string>
     <string name="intro_description2">Tentukan waktu dan lokasi yang anda inginkan untuk menerima pelayanan dari kami.</string>
     <string name="intro_description3">Para pekerja profesional kami akan datang dengan perlengkapan penuh sesuai kebutuhan ke tempat dan waktu yang anda pilih.</string>
-
+    <string name="email_label">Email</string>
+    <string name="password_label">Kata Sandi</string>
+    <string name="login_label">Masuk</string>
 </resources>
