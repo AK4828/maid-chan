@@ -1,108 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context="com.butuhpembantu.activity.MainActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp">
-
-        <include layout="@layout/toolbar" />
-    </android.support.design.widget.AppBarLayout>
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.daimajia.slider.library.SliderLayout
-            android:id="@+id/promo_slider"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            custom:auto_cycle="true"
-            custom:indicator_visibility="visible"
-            custom:pager_animation="Fade"
-            custom:pager_animation_span="100" />
-
-        <com.daimajia.slider.library.Indicators.PagerIndicator
-            android:id="@+id/slider_indicator"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            custom:selected_color="@color/colorPrimary"
-            custom:selected_height="6dp"
-            custom:selected_padding_left="5dp"
-            custom:selected_padding_right="5dp"
-            custom:selected_width="6dp"
-            custom:shape="oval"
-            custom:unselected_color="@color/blueGray200"
-            custom:unselected_height="6dp"
-            custom:unselected_padding_left="5dp"
-            custom:unselected_padding_right="5dp"
-            custom:unselected_width="6dp" />
+            app:elevation="0dp">
 
-        <android.support.v7.widget.CardView
+            <include layout="@layout/toolbar" />
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_margin="5dp"
-            app:cardElevation="2dp"
-            app:cardMaxElevation="4dp">
-            <RelativeLayout
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/promo_slider"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/service_image"
-                    android:layout_width="125dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"/>
-                <TextView
-                    android:id="@+id/service_name"
-                    android:layout_toRightOf="@+id/service_image"
-                    android:layout_width="match_parent"
-                    android:text="Service name"
-                    android:gravity="center"
-                    android:textSize="22sp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_margin="5dp"
-            app:cardElevation="2dp"
-            app:cardMaxElevation="4dp">
-            <RelativeLayout
+                android:layout_height="150dp"
+                custom:auto_cycle="true"
+                custom:indicator_visibility="visible"
+                custom:pager_animation="Fade"
+                custom:pager_animation_span="100" />
+
+            <com.daimajia.slider.library.Indicators.PagerIndicator
+                android:id="@+id/slider_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                custom:selected_color="@color/colorPrimary"
+                custom:selected_height="6dp"
+                custom:selected_padding_left="5dp"
+                custom:selected_padding_right="5dp"
+                custom:selected_width="6dp"
+                custom:shape="oval"
+                custom:unselected_color="@color/blueGray200"
+                custom:unselected_height="6dp"
+                custom:unselected_padding_left="5dp"
+                custom:unselected_padding_right="5dp"
+                custom:unselected_width="6dp" />
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/service_image1"
-                    android:layout_width="125dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"/>
-                <TextView
-                    android:id="@+id/service_name1"
-                    android:layout_toRightOf="@+id/service_image1"
+                android:layout_height="130dp"
+                android:layout_margin="5dp"
+                app:cardElevation="2dp"
+                app:cardMaxElevation="4dp">
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:text="Service name"
-                    android:gravity="center"
-                    android:textSize="22sp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/service_image"
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/service_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@+id/service_image"
+                        android:gravity="center"
+                        android:text="Service name"
+                        android:textSize="22sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="5dp"
+                app:cardElevation="2dp"
+                app:cardMaxElevation="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/service_image1"
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/service_name1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@+id/service_image1"
+                        android:gravity="center"
+                        android:text="Service name"
+                        android:textSize="22sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+</android.support.v4.widget.DrawerLayout>

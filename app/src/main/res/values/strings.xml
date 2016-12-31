@@ -9,4 +9,11 @@
     <string name="email_label">Email</string>
     <string name="password_label">Kata Sandi</string>
     <string name="login_label">Masuk</string>
+
+    //navmenu
+    <string name="nav_home_label">Beranda</string>
+    <string name="nav_history_label">Riwayat</string>
+    <string name="nav_setting_label">Pengaturan</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
 </resources>
