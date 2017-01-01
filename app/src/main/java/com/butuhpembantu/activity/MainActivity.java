@@ -6,8 +6,10 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements ServiceJob.Servic
     DrawerLayout drawerLayout;
     private RecyclerView.LayoutManager layoutManager;
     private ProgressDialog progressDialog;
+    private ServiceAdapter serviceAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements ServiceJob.Servic
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
@@ -80,16 +82,17 @@ public class MainActivity extends AppCompatActivity implements ServiceJob.Servic
         progressDialog.setMessage(getString(R.string.message_loading));
         progressDialog.setCancelable(false);
 
+        layoutManager = new LinearLayoutManager(this);
         serviceRecycler.setLayoutManager(layoutManager);
         serviceRecycler.setHasFixedSize(true);
-        ServiceAdapter serviceAdapter;
         serviceRecycler.setAdapter(serviceAdapter = new ServiceAdapter(this));
+        new ServiceJob().setServiceJobListener(this).execute();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        new ServiceJob().setServiceJobListener(this).execute();
+
     }
 
     @Override
@@ -103,6 +106,9 @@ public class MainActivity extends AppCompatActivity implements ServiceJob.Servic
     public void onServiceJobPostExecute(List<Service> services) {
         if (progressDialog != null && progressDialog.isShowing()) {
             progressDialog.dismiss();
+        }
+        if (services.size() != 0) {
+            serviceAdapter.addItem(services);
         }
     }
 }

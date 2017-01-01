@@ -2,6 +2,7 @@ package com.butuhpembantu.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.butuhpembantu.R;
 import com.butuhpembantu.model.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import butterknife.BindView;
@@ -52,7 +54,13 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
     @Override
     public int getItemCount() {
+        Log.d("asasasas", String.valueOf(services.size()));
         return services.size();
+    }
+
+    public void addItem(Collection<Service> services) {
+        this.services.addAll(services);
+        notifyDataSetChanged();
     }
 
 

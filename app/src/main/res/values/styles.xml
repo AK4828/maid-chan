@@ -18,4 +18,10 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="ListView" parent="Widget.AppCompat.ListView">
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+
 </resources>
