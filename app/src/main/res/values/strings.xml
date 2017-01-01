@@ -16,4 +16,6 @@
     <string name="nav_setting_label">Pengaturan</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+
+    <string name="message_loading">Memuat Data...</string>
 </resources>

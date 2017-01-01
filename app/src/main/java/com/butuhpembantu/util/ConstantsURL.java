@@ -6,5 +6,6 @@ package com.butuhpembantu.util;
 
 public class ConstantsURL {
 
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "http://maid-chan.anakoding.net/api/";
+    public static final String SERVICE_URL = BASE_URL + "service/read_all";
 }
