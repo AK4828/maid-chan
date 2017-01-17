@@ -1,6 +1,9 @@
 package com.butuhpembantu.model;
 
+import android.util.Log;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.orm.SugarRecord;
 
 import java.io.Serializable;
 
@@ -8,10 +11,10 @@ import java.io.Serializable;
  * Created by akm on 1/1/17.
  */
 
-public class Service implements Serializable{
+public class Service extends SugarRecord implements Serializable{
 
     @JsonProperty("id")
-    public String id;
+    public Long id;
     @JsonProperty("name")
     public String name;
     @JsonProperty("description")
@@ -20,11 +23,14 @@ public class Service implements Serializable{
     public String status;
     public Icon icon;
 
-    public String getId() {
+
+    @Override
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    @Override
+    public void setId(Long id) {
         this.id = id;
     }
 

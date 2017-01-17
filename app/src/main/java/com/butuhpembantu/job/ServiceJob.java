@@ -39,6 +39,14 @@ public class ServiceJob extends AsyncTask<Void, Void, List<Service>> {
             Persistence<Service> services = getServiceCall.execute().body();
             List<Service> serviceList = services.getResults();
 
+            for (Service service : serviceList) {
+                service.setId(service.getId());
+                service.setName(service.getName());
+                service.setDescription(service.getDescription());
+                service.setStatus(service.getStatus());
+                service.save();
+            }
+
             return serviceList;
         } catch (Exception e) {
             e.printStackTrace();

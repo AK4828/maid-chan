@@ -1,6 +1,7 @@
 package com.butuhpembantu.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.butuhpembantu.R;
+import com.butuhpembantu.activity.OrderShowcaseActivity;
 import com.butuhpembantu.model.Service;
 
 import java.util.ArrayList;
@@ -47,14 +49,13 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Clicked", Toast.LENGTH_LONG).show();
+                context.startActivity(new Intent(context, OrderShowcaseActivity.class));
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        Log.d("asasasas", String.valueOf(services.size()));
         return services.size();
     }
 

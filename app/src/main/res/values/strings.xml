@@ -9,6 +9,11 @@
     <string name="email_label">Email</string>
     <string name="password_label">Kata Sandi</string>
     <string name="login_label">Masuk</string>
+    <string name="showcase_title">Top Home Cleaning</string>
+    <string name="showcase_service_type">Jenis Pelayanan</string>
+    <string name="showcase_service_advantages">Keuntungan Pelayanan</string>
+    <string name="showcase_more_information">Informasi Lebih</string>
+    <string name="order_label">Pesan</string>
 
     //navmenu
     <string name="nav_home_label">Beranda</string>
