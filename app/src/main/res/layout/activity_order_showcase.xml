@@ -64,7 +64,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Area Malang" />
+                        android:text="Pekerja Terlatih" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -88,7 +88,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Area Malang" />
+                        android:text="Pekerja Membawa Perlengkapan Penuh" />
 
                 </LinearLayout>
 
@@ -104,7 +104,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Area Malang" />
+                        android:text="Pelayanan Pembersihan" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

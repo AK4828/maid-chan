@@ -7,6 +7,8 @@ import com.butuhpembantu.application.ButuhPembantuApplication;
 import com.butuhpembantu.model.Persistence;
 import com.butuhpembantu.model.Service;
 import com.butuhpembantu.services.ServicesTypeService;
+import com.orm.query.Condition;
+import com.orm.query.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,11 +42,20 @@ public class ServiceJob extends AsyncTask<Void, Void, List<Service>> {
             List<Service> serviceList = services.getResults();
 
             for (Service service : serviceList) {
+                Service serviceDb = Select.from(Service.class)
+                        .where(Condition.prop("ID").eq(service.getId())).first();
                 service.setId(service.getId());
                 service.setName(service.getName());
                 service.setDescription(service.getDescription());
                 service.setStatus(service.getStatus());
-                service.save();
+                service.setIcon(service.getIcon());
+                service.getIcon().setOriginal(service.getIcon().getOriginal());
+                service.getIcon().setThumb(service.getIcon().getThumb());
+                service.getIcon().setMedium(service.getIcon().getMedium());
+                service.getIcon().setLarge(service.getIcon().getLarge());
+                if (serviceDb == null || serviceDb.getId() == null) {
+                    service.save();
+                }
             }
 
             return serviceList;

@@ -14,6 +14,16 @@
     <string name="showcase_service_advantages">Keuntungan Pelayanan</string>
     <string name="showcase_more_information">Informasi Lebih</string>
     <string name="order_label">Pesan</string>
+    <string name="order_label_act">Pesan Layanan</string>
+
+    <string name="order_date_label">Tanggal Pemesanan</string>
+    <string name="order_time_label">Waktu Pemesanan</string>
+    <string name="order_location_label">Lokasi</string>
+    <string name="order_location_detail_label">Detail Lokasi</string>
+    <string name="order_phone_label">Telepon</string>
+    <string name="order_employee_grades_label">Peringkat Pembantu</string>
+    <string name="order_service_package_label">Paket Layanan</string>
+    <string name="order_24_hours_label">Mode 24 Jam</string>
 
     //navmenu
     <string name="nav_home_label">Beranda</string>

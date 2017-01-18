@@ -15,9 +15,15 @@ import android.widget.TextView;
 
 import com.butuhpembantu.R;
 import com.butuhpembantu.adapters.ServiceAdapter;
+import com.butuhpembantu.job.MaidJob;
+import com.butuhpembantu.job.MaidLevelJob;
 import com.butuhpembantu.job.ServiceJob;
+import com.butuhpembantu.job.ServicePackageJob;
+import com.butuhpembantu.model.Maid;
+import com.butuhpembantu.model.MaidLevel;
 import com.butuhpembantu.model.Persistence;
 import com.butuhpembantu.model.Service;
+import com.butuhpembantu.model.ServicePackage;
 import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -29,7 +35,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements ServiceJob.ServiceJobListener {
+public class MainActivity extends AppCompatActivity implements ServiceJob.ServiceJobListener,
+        MaidLevelJob.MaidLevelJobListener, ServicePackageJob.ServicePackageJobListener, MaidJob.MaidJobListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -87,6 +94,9 @@ public class MainActivity extends AppCompatActivity implements ServiceJob.Servic
         serviceRecycler.setHasFixedSize(true);
         serviceRecycler.setAdapter(serviceAdapter = new ServiceAdapter(this));
         new ServiceJob().setServiceJobListener(this).execute();
+        new MaidLevelJob().setLevelJobListener(this).execute();
+        new ServicePackageJob().setServicePackageJobListener(this).execute();
+        new MaidJob().setMaidJobListener(this).execute();
     }
 
     @Override
@@ -109,6 +119,48 @@ public class MainActivity extends AppCompatActivity implements ServiceJob.Servic
         }
         if (services.size() != 0) {
             serviceAdapter.addItem(services);
+        }
+    }
+
+    @Override
+    public void onMaidLevelJobPreExecute() {
+        if (progressDialog != null && !progressDialog.isShowing()) {
+            progressDialog.show();
+        }
+    }
+
+    @Override
+    public void onMaidLevelJobPostExecute(List<MaidLevel> services) {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+    }
+
+    @Override
+    public void onServicePackageJobPreExecute() {
+        if (progressDialog != null && !progressDialog.isShowing()) {
+            progressDialog.show();
+        }
+    }
+
+    @Override
+    public void onServicePackageJobPostExecute(List<ServicePackage> servicePackages) {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
+    }
+
+    @Override
+    public void onMaidJobPreExecute() {
+        if (progressDialog != null && !progressDialog.isShowing()) {
+            progressDialog.show();
+        }
+    }
+
+    @Override
+    public void onMaidJobPostExecute(List<Maid> maids) {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
         }
     }
 }

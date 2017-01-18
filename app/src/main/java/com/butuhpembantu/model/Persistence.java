@@ -13,18 +13,17 @@ import java.util.List;
 public class Persistence<Entity> implements Serializable {
 
     @JsonProperty("metadata")
-    private int metadata;
+    private int count;
 
     @JsonProperty("results")
     private List<Entity> results = new ArrayList<>();
 
-
-    public int getMetadata() {
-        return metadata;
+    public int getCount() {
+        return count;
     }
 
-    public void setMetadata(int metadata) {
-        this.metadata = metadata;
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public List<Entity> getResults() {

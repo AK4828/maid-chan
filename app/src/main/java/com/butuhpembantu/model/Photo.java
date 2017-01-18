@@ -6,10 +6,11 @@ import com.orm.SugarRecord;
 import java.io.Serializable;
 
 /**
- * Created by akm on 1/1/17.
+ * Created by akm on 1/18/17.
  */
 
-public class Icon extends SugarRecord implements Serializable {
+public class Photo extends SugarRecord implements Serializable {
+
     @JsonProperty("original")
     public String original;
     @JsonProperty("thumb")
