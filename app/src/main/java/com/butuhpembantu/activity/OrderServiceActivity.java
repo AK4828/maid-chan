@@ -1,27 +1,33 @@
 package com.butuhpembantu.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.butuhpembantu.R;
+import com.butuhpembantu.model.MaidLevel;
+import com.butuhpembantu.model.ServicePackage;
+import com.butuhpembantu.util.Util;
+import com.orm.query.Condition;
+import com.orm.query.Select;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
 
 /**
  * Created by akm on 1/17/17.
@@ -45,11 +51,12 @@ public class OrderServiceActivity extends AppCompatActivity implements TimePicke
     EditText timeInput;
     @BindView(R.id.date_input)
     EditText dateInput;
-
-    Calendar calendar = Calendar.getInstance();
     @BindView(R.id.mode_24_hours)
     CheckBox mode24Hours;
+    @BindView(R.id.price_input)
+    EditText priceInput;
 
+    Calendar calendar = Calendar.getInstance();
     private SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
     private SimpleDateFormat formatTime = new SimpleDateFormat("HH:mm");
 
@@ -63,6 +70,13 @@ public class OrderServiceActivity extends AppCompatActivity implements TimePicke
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        List<MaidLevel> maidLevels = Select.from(MaidLevel.class).list();
+        ArrayAdapter<MaidLevel> maidLevelsAdapter = new ArrayAdapter<MaidLevel>(this, android.R.layout.simple_spinner_dropdown_item, maidLevels);
+        employeeGradeSelector.setAdapter(maidLevelsAdapter);
+
+        List<ServicePackage> servicePackages = Select.from(ServicePackage.class).list();
+        ArrayAdapter<ServicePackage> servicePackageArrayAdapter = new ArrayAdapter<ServicePackage>(this, android.R.layout.simple_spinner_dropdown_item, servicePackages);
+        servicePackageSelector.setAdapter(servicePackageArrayAdapter);
     }
 
     @Override
@@ -71,6 +85,14 @@ public class OrderServiceActivity extends AppCompatActivity implements TimePicke
             super.onBackPressed();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("unused")
+    @OnTextChanged(value = R.id.price_input)
+    public void onTextChanged(CharSequence s) {
+        String selectedPackages = servicePackageSelector.getSelectedItem().toString();
+        ServicePackage servicePackage = Select.from(ServicePackage.class).where(Condition.prop("NAME").like("%" + selectedPackages + "%")).first();
+        priceInput.setText(Util.monetaryFormat(servicePackage.getIdnPrice()));
     }
 
     @OnClick({R.id.date_input, R.id.time_input, R.id.location_input})
@@ -128,6 +150,7 @@ public class OrderServiceActivity extends AppCompatActivity implements TimePicke
         String tm = formatTime.format(calendar.getTime());
         timeInput.setText(tm);
     }
+
 
     @OnClick(R.id.order_button)
     public void onClick() {

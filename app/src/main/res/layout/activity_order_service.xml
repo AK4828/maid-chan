@@ -274,6 +274,44 @@
             </LinearLayout>
         </LinearLayout>
 
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--style="@style/TextLabel"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:hint="@string/order_price_label"-->
+                <!--android:textSize="14sp" />-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="10dp"-->
+                    <!--android:contentDescription="@string/order_phone_label"-->
+                    <!--android:src="@drawable/ic_credit_card_black_24dp" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/price_input"-->
+                    <!--style="@style/TextAppearance.AppCompat"-->
+                    <!--android:layout_width="0dip"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:editable="false"-->
+                    <!--android:focusable="false"-->
+                    <!--android:textSize="14sp" />-->
+
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/order_button"
             android:layout_width="match_parent"

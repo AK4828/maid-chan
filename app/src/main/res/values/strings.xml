@@ -24,6 +24,7 @@
     <string name="order_employee_grades_label">Peringkat Pembantu</string>
     <string name="order_service_package_label">Paket Layanan</string>
     <string name="order_24_hours_label">Mode 24 Jam</string>
+    <string name="order_price_label">Harga</string>
 
     //navmenu
     <string name="nav_home_label">Beranda</string>

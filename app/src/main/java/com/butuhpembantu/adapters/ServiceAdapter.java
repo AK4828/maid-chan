@@ -66,8 +66,8 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHold
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.service_image)
-        ImageView serviceImage;
+//        @BindView(R.id.service_image)
+//        ImageView serviceImage;
         @BindView(R.id.service_name)
         TextView serviceName;
         public ViewHolder(View itemView) {

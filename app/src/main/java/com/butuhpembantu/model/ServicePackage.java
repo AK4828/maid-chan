@@ -28,7 +28,7 @@ public class ServicePackage extends SugarRecord implements Serializable {
     @JsonProperty("idn_price")
     public double idnPrice;
     @JsonProperty("status")
-    public double status;
+    public int status;
 
     @Override
     public Long getId() {
@@ -88,11 +88,16 @@ public class ServicePackage extends SugarRecord implements Serializable {
         this.idnPrice = idnPrice;
     }
 
-    public double getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(double status) {
+    public void setStatus(int status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

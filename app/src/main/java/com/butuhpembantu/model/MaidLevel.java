@@ -53,4 +53,10 @@ public class MaidLevel extends SugarRecord implements Serializable {
     public void setStatus(int status) {
         Status = status;
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
 }
