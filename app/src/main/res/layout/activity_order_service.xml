@@ -102,7 +102,7 @@
             <TextView
                 style="@style/TextLabel"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="@string/order_location_label"
                 android:textSize="14sp" />
 
@@ -115,7 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:contentDescription="@string/order_date_label"
+                    android:contentDescription="@string/order_location_label"
                     android:src="@drawable/ic_my_location_black_24dp" />
 
                 <EditText

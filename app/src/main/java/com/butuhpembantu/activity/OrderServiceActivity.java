@@ -1,5 +1,6 @@
 package com.butuhpembantu.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -53,8 +54,8 @@ public class OrderServiceActivity extends AppCompatActivity implements TimePicke
     EditText dateInput;
     @BindView(R.id.mode_24_hours)
     CheckBox mode24Hours;
-    @BindView(R.id.price_input)
-    EditText priceInput;
+//    @BindView(R.id.price_input)
+//    EditText priceInput;
 
     Calendar calendar = Calendar.getInstance();
     private SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
@@ -87,13 +88,13 @@ public class OrderServiceActivity extends AppCompatActivity implements TimePicke
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("unused")
-    @OnTextChanged(value = R.id.price_input)
-    public void onTextChanged(CharSequence s) {
-        String selectedPackages = servicePackageSelector.getSelectedItem().toString();
-        ServicePackage servicePackage = Select.from(ServicePackage.class).where(Condition.prop("NAME").like("%" + selectedPackages + "%")).first();
-        priceInput.setText(Util.monetaryFormat(servicePackage.getIdnPrice()));
-    }
+//    @SuppressWarnings("unused")
+//    @OnTextChanged(value = R.id.price_input)
+//    public void onTextChanged(CharSequence s) {
+//        String selectedPackages = servicePackageSelector.getSelectedItem().toString();
+//        ServicePackage servicePackage = Select.from(ServicePackage.class).where(Condition.prop("NAME").like("%" + selectedPackages + "%")).first();
+//        priceInput.setText(Util.monetaryFormat(servicePackage.getIdnPrice()));
+//    }
 
     @OnClick({R.id.date_input, R.id.time_input, R.id.location_input})
     public void onClick(View view) {
@@ -126,6 +127,7 @@ public class OrderServiceActivity extends AppCompatActivity implements TimePicke
                 break;
 
             case R.id.location_input:
+                startActivity(new Intent(this, MapsActivity.class));
                 break;
         }
 

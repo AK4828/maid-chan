@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Butuh Pembantu</string>
+    <string name="app_name">Go Helpers</string>
     <string name="intro_title_slide1">Pilih Layanan Dari Kami</string>
     <string name="intro_title_slide2">Tentukan Waktu Dan Lokasi</string>
     <string name="intro_title_slide3">Terima Pelayanan</string>
@@ -34,4 +34,5 @@
     <string name="drawer_close">Close</string>
 
     <string name="message_loading">Memuat Data...</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
