@@ -59,6 +59,16 @@
             android:name=".activity.OrderServiceActivity"
             android:label="@string/order_label_act"
             android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".activity.LandingActivity"
+            android:label="@string/landing_label_act"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.SignupActivity"
+            android:label="@string/signup_label_act"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

@@ -26,6 +26,10 @@
     <string name="order_24_hours_label">Mode 24 Jam</string>
     <string name="order_price_label">Harga</string>
 
+    <string name="landing_label_act">Landing</string>
+
+    <string name="signup_label_act">Signup</string>
+
     //navmenu
     <string name="nav_home_label">Beranda</string>
     <string name="nav_history_label">Riwayat</string>
