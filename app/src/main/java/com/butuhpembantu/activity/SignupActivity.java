@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.butuhpembantu.R;
+import com.butuhpembantu.util.Easing;
+
 /**
  * Created by Fandi on 1/29/2017.
  */

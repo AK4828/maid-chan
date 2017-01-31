@@ -27,7 +27,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Preferences.setFirstAppRunningStatus(false);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
     }

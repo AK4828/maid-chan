@@ -1,4 +1,4 @@
-package com.butuhpembantu.activity;
+package com.butuhpembantu.util;
 
 import android.animation.TypeEvaluator;
 /**

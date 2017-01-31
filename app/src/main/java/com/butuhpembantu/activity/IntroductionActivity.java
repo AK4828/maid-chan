@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.butuhpembantu.R;
+import com.butuhpembantu.util.Preferences;
 
 
 /**
@@ -28,15 +29,13 @@ public class IntroductionActivity extends AppCompatActivity {
     private TextView[] dots;
     private int[] layouts;
     private Button btnSkip, btnNext;
-    private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
-        prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch()) {
+        if (!Preferences.getInstance().getFirstAppRunningStatus()) {
             launchHomeScreen();
             finish();
         }
@@ -110,7 +109,7 @@ public class IntroductionActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-        prefManager.setFirstTimeLaunch(false);
+        Preferences.setFirstAppRunningStatus(false);
         startActivity(new Intent(IntroductionActivity.this, LandingActivity.class));
         finish();
     }
