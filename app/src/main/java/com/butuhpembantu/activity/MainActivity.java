@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements ServiceJob.Servic
 
         HashMap<String, Integer> imageFile = new HashMap<String, Integer>();
         imageFile.put("Dimanapun Kapanpun", R.drawable.rsz_1cleaning_services);
-        imageFile.put("Tenaga Kerja Proffesional", R.drawable.rsz_austin_maids);
+        imageFile.put("Tenaga Kerja Profesional", R.drawable.rsz_austin_maids);
         imageFile.put("Pelayanan Tingkat Tinggi", R.drawable.rsz_domestic_cleaning_service);
 
         for (String name : imageFile.keySet()) {
